@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>🎄</title>
+        <meta charset="utf-8">
+        <style>
+            table{
+                border: 1px solid #444444;
+                border-collapse: collapse;
+                width:500px;
+                height:500px;
+            }
+            td{
+                border: 1px solid #444444;
+            }
+        </style>
+    </head>
+    <body>
+       <table>
+            <thead></thead>
+            <tbody id = "tree-tbody">
+            </tbody>
+       </table> 
+       <script>
+            let tableBody = document.getElementById("tree-tbody");
+            for (let i = 0; i < 16; i++)
+            {
+                let newTr = document.createElement("tr");
+                for (let j = 0; j < 16; j++)
+                {
+                    let newTd = document.createElement("td");
+                    let newText = document.createTextNode("");
+                    newTd.setAttribute("id",i.toString()+","+j.toString());
+                    if (j % 3=== 0 && i % 3 === 0)
+                    {
+                        newTd.setAttribute("style","background-color:green");
+                    }
+                    newTd.appendChild(newText);
+                    newTr.appendChild(newTd);
+                }
+                tableBody.appendChild(newTr);
+            }
+       </script>
+    </body>
+</html>
